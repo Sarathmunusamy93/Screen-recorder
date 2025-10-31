@@ -1,0 +1,18 @@
+{
+  "name": "Screen & Audio Recorder",
+  "description": "A demo app for screen recording in desire video format",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "downloads",
+    "offscreen"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "default_icon.png"
+  }
+}

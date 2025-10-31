@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Recorder</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        padding: 15px;
+        width: 250px;
+        background-color: #f8f9fa;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .btn {
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      .btn-primary {
+        background-color: #007bff;
+        border: none;
+      }
+      .btn-success {
+        background-color: #28a745;
+        border: none;
+      }
+      .form-control {
+        width: 200px;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ced4da;
+      }
+      #save-section {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+      }
+      .title {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+
+      #download-btn,
+      #discard-btn {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Screen Recorder</div>
+      <select class="form-control" id="format-select" style="margin-top: 10px">
+        <option value="mp4">MP4</option>
+        <option value="mov">MOV</option>
+        <option value="wmv" selected>WMV</option>
+        <option value="avi">AVI</option>
+        <option value="mkv">MKV</option>
+      </select>
+      <button class="btn btn-primary" id="start-btn">Start Recording</button>
+      <button class="btn btn-primary" id="stop-btn" disabled>
+        Stop Recording
+      </button>
+      <div id="save-section" style="display: none">
+        <input
+          type="text"
+          id="filename"
+          class="form-control"
+          placeholder="Enter file name"
+        />
+
+        <button class="btn btn-success" id="download-btn" disabled>
+          Download Recording
+        </button>
+        <button class="btn btn-fail" id="discard-btn">Discard Recording</button>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
